@@ -2,10 +2,6 @@
 Download your discord relationships and prepare a gephi workspace dataset or generate an obsidian vault using mutual connections. 
 
 
-
-<img src = 'https://user-images.githubusercontent.com/96950281/161457462-bfafd1a6-2e8f-4822-894f-af0daca54662.png' width = '400'>
-<sub>Usernames have been hidden for confidentality and privacy.</sub>
-
 ## Is this safe? 
 
 Any automated API calls to discord are unsafe. I have not experienced any issues myself after using the tool multiple times, but I am putting this disclaimer here so you understand the potential consequences. Discord likely will not be able to tell you're using this program versus simply viewing your friend's profiles.
@@ -38,12 +34,21 @@ You can find your discord token by open inspect element and looking for a reques
 
 ## Gephi? 
 
-This is the preferred method of graph generation. Gephi is a powerful Open Source graph-viz tool. You can use "import spreadsheet" to import the outputted `.csv` file as an adjaceny list into your network. Then you can use Force-Atlas or some other layout function to oragnize the data to your liking. This tool is very powerful and can do much more than just visualize the data. You can install plugins and tools for shortest path between nodes, doing community checks, and many more. 
+This is the preferred method of graph generation. Gephi is a powerful Open Source graph-viz tool. This tool is very powerful and can do much more than just visualize the data. You can install plugins and tools for shortest path between nodes, doing community checks, and many more. 
+
+You can use "import spreadsheet" to import the output `.csv` file as an adjaceny list into your network. Then you can use Force-Atlas or some other layout function to oragnize the data to your liking. Make sure the "edge merge strategy" is set to "Sum" and "Graph Type" is set to "Undirected". If you cant see these options when progressing through the import settings, try clicking a blue "More options..." text.
+
+<img src = 'https://user-images.githubusercontent.com/96950281/173152456-e2a202e0-0973-4e6a-a825-9d9dfed13019.png' width = '400'>
+<sub>Usernames have been hidden for confidentality and privacy.</sub>
 
 https://gephi.org/
 
 ## Obsidian? 
 
 Obsidian is a note taking tool which you can write notes with and organize. Very neat note taking tool that should not be overlooked. The graph visualization tool in obsidian used a force-directed approach. 
+
+
+<img src = 'https://user-images.githubusercontent.com/96950281/161457462-bfafd1a6-2e8f-4822-894f-af0daca54662.png' width = '400'>
+<sub>Usernames have been hidden for confidentality and privacy.</sub>
 
 https://obsidian.md/
