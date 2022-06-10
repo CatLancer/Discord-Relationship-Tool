@@ -1,13 +1,16 @@
 # Discord-Relationship-Tool
-Download your discord relationships and generate an obsidian vault using mutual connections. 
+Download your discord relationships and prepare a gephi workspace dataset or generate an obsidian vault using mutual connections. 
 
-Usernames have been hidden for confidentality and privacy.
+
 
 <img src = 'https://user-images.githubusercontent.com/96950281/161457462-bfafd1a6-2e8f-4822-894f-af0daca54662.png' width = '400'>
+<sub>Usernames have been hidden for confidentality and privacy.</sub>
 
 ## Is this safe? 
 
-Any automated API calls to discord is unsafe. I have not experienced any issues myself after using the tool multiple times. If you do happen to get locked out of your discord account, it will likely be due to their automatic spam detection in which case you can phone verify possibly or contact support to unlock the account. 
+Any automated API calls to discord are unsafe. I have not experienced any issues myself after using the tool multiple times, but I am putting this disclaimer here so you understand the potential consequences. Discord likely will not be able to tell you're using this program versus simply viewing your friend's profiles.
+
+If you do happen to get locked out of your discord account, it will likely be due to their automatic spam detection in which case you can phone verify possibly or contact support to unlock the account. To iterate once more: *Any automated API calls to discord are unsafe.*
 
 ## Usage
 Files will be saved to the current working directory (the directory the terminal instance is in).
@@ -33,10 +36,14 @@ Before we start, **dont share this token with ANYONE. They can use it to log int
 
 You can find your discord token by open inspect element and looking for a request to discord.com. There will be an `Authorization` header which you can use. If you have 2FA on your account will start with "mfa." otherwise the first so many characters represent your discord snowflake id in base64. 
 
+## Gephi? 
 
+This is the preferred method of graph generation. Gephi is a powerful Open Source graph-viz tool. You can use "import spreadsheet" to import the outputted `.csv` file as an adjaceny list into your network. Then you can use Force-Atlas or some other layout function to oragnize the data to your liking. This tool is very powerful and can do much more than just visualize the data. You can install plugins and tools for shortest path between nodes, doing community checks, and many more. 
+
+https://gephi.org/
 
 ## Obsidian? 
 
-Obsidian is a note taking tool. The purpose of this tool is to generate notes on relationship data between people that can be manually manipulated fairly easy and sorted simply. The graph visualization tool in obsidian used a force-directed approach. 
+Obsidian is a note taking tool which you can write notes with and organize. Very neat note taking tool that should not be overlooked. The graph visualization tool in obsidian used a force-directed approach. 
 
 https://obsidian.md/
