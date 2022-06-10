@@ -36,7 +36,7 @@ You can find your discord token by open inspect element and looking for a reques
 
 This is the preferred method of graph generation. Gephi is a powerful Open Source graph-viz tool. This tool is very powerful and can do much more than just visualize the data. You can install plugins and tools for shortest path between nodes, doing community checks, and many more. 
 
-You can use "import spreadsheet" to import the output `.csv` file as an adjaceny list into your network. Then you can use Force-Atlas or some other layout function to oragnize the data to your liking. Make sure the "edge merge strategy" is set to "Sum" and "Graph Type" is set to "Undirected". If you cant see these options when progressing through the import settings, try clicking a blue "More options..." text.
+You can use "import spreadsheet" to import the output `.csv` file as an adjaceny list into your network. Then you can use Force-Atlas, Yifan Hu, or some other layout function to oragnize the data to your liking. Make sure the "edge merge strategy" is set to "Sum" and "Graph Type" is set to "Undirected". If you cant see these options when progressing through the import settings, try clicking a blue "More options..." text. 
 
 <img src = 'https://user-images.githubusercontent.com/96950281/173152456-e2a202e0-0973-4e6a-a825-9d9dfed13019.png' width = '400'>
 <sub>Usernames have been hidden for confidentality and privacy.</sub>
