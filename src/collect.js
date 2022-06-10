@@ -2,7 +2,7 @@ const fs = require(`fs`).promises // safer than fs/promises incase of old node v
 const https = require(`${__dirname}\\modules\\https.js`)
 
 const RELATIONSHIP_API = `https://discord.com/api/v8/users/{USER_ID}/relationships`
-const RELATIONSHIP_CALL_TIMEOUT = 2000 // avoid 429 and api spam detection...?!
+const RELATIONSHIP_CALL_TIMEOUT = 2000 // enough to avoid 429 and api spam detection...?
 
 const token = process.argv[2]
 
@@ -37,7 +37,7 @@ async function get_user_relationships(user_token, user_id) {
     }
 }
 
-;(async function() {
+async function do_collection() {
     const relationships = await get_user_relationships(token, `@me`)
     const relationship_mappings = []
 
@@ -51,9 +51,21 @@ async function get_user_relationships(user_token, user_id) {
         await sleep(RELATIONSHIP_CALL_TIMEOUT)
     }
 
-    const output_file = `${process.cwd()}\\${Date.now()}.json`
-    const output_data = JSON.stringify(relationship_mappings, null, `\t`)
+    const output_file_json = `${process.cwd()}\\${Date.now()}.json`
+    const output_data_json = JSON.stringify(relationship_mappings, null, `\t`)
 
-    fs.writeFile(output_file, output_data)
-        .then(() => console.log(`saved results to ${output_file}`))
-})()
+    const output_file_csv = `${process.cwd()}\\${Date.now()}.csv`
+    const output_data_csv = relationship_mappings
+        .map(mapping => mapping.mutuals
+            .map(mutual => `${mapping.relationship.user.username}#${mapping.relationship.user.discriminator},${mutual.username}#${mutual.discriminator}\n`)
+            .join(``)
+        )
+
+    fs.writeFile(output_file_json, output_data_json)
+        .then(() => console.log(`saved results to ${output_file_json}`))
+
+    fs.writeFile(output_file_csv, output_data_csv)
+        .then(() => console.log(`saved results to ${output_file_csv}`))
+}
+
+do_collection()
